@@ -5,42 +5,46 @@ using UnityEngine;
 public class lezard : MonoBehaviour
 {
 
-    private Vector2 _direction ;
-    
+    private Vector3 _direction ;
+    private float speed = 0.10f;
     
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _direction = Vector2.up;
-
-        }   
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            _direction = Vector2.left;
-
+            transform.position += Vector3.left*speed;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            _direction = Vector2.down;
-
+            transform.position += Vector3.right*speed;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            _direction = Vector2.right;
-
-        } 
         
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position += Vector3.up*speed;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position += Vector3.down*speed;
+        }
     }
 
-    private void FixedUpdate()
+   //rivate void FixedUpdate()
+   //
+     // this.transform.position = new Vector3(
+       //   Mathf.Round(this.transform.position.x) + _direction.x,
+         // Mathf.Round(this.transform.position.y) + _direction.y,
+           //.0f
+           //;
+    //
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        this.transform.position = new Vector3(
-            Mathf.Round(this.transform.position.x) + _direction.x,
-            Mathf.Round(this.transform.position.y) + _direction.y,
-            0.0f
-            );
+        if (collision.gameObject.tag == "mur")
+        {
+
+            print("boinjouyr");
+        }
     }
 }
