@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &440189368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5344522283773103765, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
+  m_PrefabInstance: {fileID: 6661537794140695825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &440189373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440189368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d8fa3b7fb79314993fcdb2bfd686c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +324,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 252741821461006491, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 252741821461006491, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.48
+      objectReference: {fileID: 0}
     - target: {fileID: 1298326035496076050, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -359,7 +384,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 856157011842861100, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5344522283773103765, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 440189373}
   m_SourcePrefab: {fileID: 100100000, guid: 6893d31afc232294fb91cdf048e2e918, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
