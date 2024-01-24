@@ -5,21 +5,19 @@ using UnityEngine;
 public class lezard : MonoBehaviour
 {
 
-    private Vector2 _direction = Vector2.right;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector2 _direction ;
+    
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _direction = Vector2.up;
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
+
+        }   
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             _direction = Vector2.left;
 
@@ -33,7 +31,8 @@ public class lezard : MonoBehaviour
         {
             _direction = Vector2.right;
 
-        }
+        } 
+        
     }
 
     private void FixedUpdate()
