@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class lezard : MonoBehaviour
 {
-
-    private Vector3 _direction ;
-    private float speed = 0.10f;
-    
+    private List<Transform> _segments;
+    public Transform tete;
+    public float speed = 0.20f;
+    public Transform segmentPrefab;
+    private void Start()
+    {
+        _segments = new List<Transform>();
+        _segments.Add(this.transform);
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,20 +36,37 @@ public class lezard : MonoBehaviour
         }
     }
 
-   //rivate void FixedUpdate()
-   //
-     // this.transform.position = new Vector3(
-       //   Mathf.Round(this.transform.position.x) + _direction.x,
-         // Mathf.Round(this.transform.position.y) + _direction.y,
-           //.0f
-           //;
-    //
+    private void FixedUpdate()
+    {
+        for (int i = _segments.Count-1;i>0;i--)
+        {
+            _segments[i].position = _segments[i - 1].position;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "mur")
         {
 
             print("boinjouyr");
+        }
+    }
+    private void Grow()
+    {
+        Transform segment = Instantiate(this.segmentPrefab, new Vector3(tete.position.x - 1, tete.position.y - 1, 0));
+        segment.position = _segments[_segments.Count - 1].position;
+        _segments.Add(segment);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "bouffe")
+        {
+
+
+
+            Debug.Log("oscur");
+            Destroy(gameObject);
+
         }
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class food : MonoBehaviour
 {
 
-    public PolygonCollider2D MapSpawn;
+    public GameObject cox;
     
     
     
@@ -13,7 +14,7 @@ public class food : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -21,4 +22,14 @@ public class food : MonoBehaviour
     {
         
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            Debug.Log("oscur");
+            Destroy(gameObject);
+            
+        }
+    }
+
 }

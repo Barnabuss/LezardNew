@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - mur
+  - bouffe
+  - player
   layers:
   - Default
   - TransparentFX
